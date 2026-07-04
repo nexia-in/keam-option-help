@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEAM Option Registration Help | Nexia Virtual Desk</title>
+    <meta name="description" content="Organize and select your college choices easily before the official KEAM 2026 option registration. Brought to you by Nexia Virtual Desk.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KEAM Option Registration Help | Nexia Virtual Desk">
+    <meta property="og:description" content="Organize and select your college choices easily before the official KEAM 2026 option registration. Brought to you by Nexia Virtual Desk.">
+    <meta property="og:url" content="https://nexia-in.github.io/keam-option-help">
+    <meta property="og:image" content="https://nexia-in.github.io/thumbnail.jpeg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KEAM Option Registration Help | Nexia Virtual Desk">
+    <meta name="twitter:description" content="Organize and select your college choices easily before the official KEAM 2026 option registration. Brought to you by Nexia Virtual Desk.">
+    <meta name="twitter:image" content="https://nexia-in.github.io/thumbnail.jpeg">
+    <style>
+        /* Fully Dark Black & AI Glowing Theme */
+        :root {
+            --glow-color: #00ffcc;
+            --nexia-green: #cfff00;
+            --bg-black: #000000;
+            --container-bg: #0d0d0d;
+            --text-main: #e0e0e0;
+            --border-dark: #333333;
+        }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .glowing-element {
+            transition: all 0.3s ease-in-out;
+        }
+        .glowing-element:hover {
+            box-shadow: 0 0 15px var(--glow-color);
+            border-color: var(--glow-color);
+            transform: translateY(-2px);
+        }
+
+        header {
+            background-color: var(--container-bg);
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--nexia-green);
+            box-shadow: 0 0 20px rgba(207, 255, 0, 0.2);
+            position: relative;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            color: var(--glow-color);
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid var(--glow-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .home-btn:hover {
+            background-color: var(--glow-color);
+            color: #000;
+            box-shadow: 0 0 15px var(--glow-color);
+        }
+
+        .nexia-contact {
+            font-size: 0.95em;
+            color: #b0bec5;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            text-shadow: 0 0 5px rgba(255,255,255,0.2);
+        }
+        
+        .experience-badge {
+            display: inline-block;
+            background-color: var(--nexia-green);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 10px;
+            box-shadow: 0 0 15px var(--nexia-green);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-dark);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        h2, h3 { color: #ffffff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--glow-color); }
+        
+        input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a1a1a;
+            border: 1px solid var(--border-dark);
+            color: #fff;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+        input:focus {
+            outline: none;
+            border-color: var(--glow-color);
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+
+        .stream-option {
+            background-color: #121212;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #444;
+            transition: 0.3s;
+        }
+        .stream-option:hover { border-left-color: var(--glow-color); }
+        .stream-option label { color: #fff; cursor: pointer; display: flex; align-items: center; font-weight: bold;}
+        .stream-option input[type="checkbox"] { transform: scale(1.3); margin-right: 12px; accent-color: var(--glow-color); }
+        .stream-desc { font-size: 0.85em; color: #aaaaaa; margin-left: 30px; margin-top: 8px; }
+
+        .nested-college-section {
+            display: none;
+            margin-top: 20px;
+            margin-left: 30px;
+            padding: 20px;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            box-shadow: inset 0 0 15px rgba(0,255,204,0.05);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            background-color: #1a1a1a;
+            border: 1px solid var(--glow-color);
+            color: #fff;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .college-list {
+            max-height: 250px;
+            overflow-y: auto;
+            background-color: #111;
+            border: 1px solid var(--border-dark);
+            border-radius: 6px;
+            padding: 10px;
+        }
+        .college-item {
+            padding: 12px;
+            border-bottom: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.2s;
+        }
+        .college-item:hover { background-color: #222; box-shadow: inset 0 0 10px rgba(0,255,204,0.1); }
+        
+        .badge {
+            font-size: 0.7em;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .badge.govt { background-color: #1976d2; color: #fff; }
+        .badge.aided { background-color: #f57c00; color: #fff; }
+        .badge.autonomous { background-color: #9c27b0; color: #fff; }
+        .badge.cost-sharing { background-color: #e91e63; color: #fff; }
+        .badge.private { background-color: #4caf50; color: #fff; }
+
+        .selected-list { list-style-type: none; padding: 0; }
+        .selected-item {
+            background-color: #1a1a1a;
+            margin-bottom: 8px;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #2196f3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: grab;
+            transition: 0.2s;
+        }
+        .selected-item:hover { background-color: #2a2a2a; }
+        .selected-item:active { cursor: grabbing; }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1em;
+            transition: 0.3s;
+        }
+        .btn-add { background-color: transparent; border: 1px solid var(--glow-color); color: var(--glow-color); }
+        .btn-add:hover { background-color: var(--glow-color); color: #000; box-shadow: 0 0 10px var(--glow-color); }
+        .btn-remove { background-color: transparent; border: 1px solid #ff1744; color: #ff1744; padding: 6px 12px; }
+        .btn-remove:hover { background-color: #ff1744; color: #fff; box-shadow: 0 0 10px #ff1744; }
+        
+        .btn-action { background-color: var(--glow-color); color: #000; width: 100%; font-size: 1.1em; margin-top: 20px; box-shadow: 0 0 15px rgba(0,255,204,0.4); }
+        .btn-action:hover { background-color: #00e676; box-shadow: 0 0 25px var(--glow-color); transform: scale(1.02); }
+        
+        .btn-reset { background-color: transparent; border: 1px solid #777; color: #ccc; margin-top: 15px; width: 100%; }
+        .btn-reset:hover { border-color: #fff; color: #fff; }
+        
+        .btn-edit { background-color: transparent; border: 1px solid #ff9800; color: #ff9800; width: 100%; margin-top: 15px; }
+        .btn-edit:hover { background-color: #ff9800; color: #000; box-shadow: 0 0 15px #ff9800; }
+        
+        .btn-whatsapp { background-color: #25D366; color: #000; width: 100%; margin-top: 15px; box-shadow: 0 0 15px rgba(37,211,102,0.4); }
+        .btn-whatsapp:hover { box-shadow: 0 0 25px #25D366; transform: scale(1.02); }
+
+        #preview-section { display: none; }
+        .preview-box {
+            background: #111;
+            padding: 20px;
+            border: 1px solid var(--glow-color);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: inset 0 0 20px rgba(0,255,204,0.1);
+        }
+        .preview-box p { margin: 8px 0; color: #ccc; }
+        .preview-box span { color: var(--glow-color); font-weight: bold; }
+
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 0 20px rgba(37,211,102,0.6);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .float-wa:hover { transform: scale(1.1); box-shadow: 0 0 30px rgba(37,211,102,0.9); }
+        .wa-tooltip {
+            position: absolute;
+            right: 75px;
+            background: #222;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #fff;
+            border: 1px solid #25d366;
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .float-wa:hover .wa-tooltip { opacity: 1; right: 80px; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="home-btn glowing-element">🏠 Home</a>
+        <h1 style="color: var(--nexia-green); text-shadow: 0 0 20px var(--nexia-green); margin-bottom: 5px;">Nexia Virtual Desk</h1>
+        <p class="nexia-contact">Olarikkara, Thrissur, Kerala</p>
+        <div class="experience-badge">16 Years of Experience 🌟</div>
+        <p class="nexia-contact" style="margin-top: 15px;">Online Applications | Resume/Biodata/CV Creation</p>
+        <p class="nexia-contact">No need to visit us. Contact via WhatsApp: <strong>+919961850698</strong></p>
+    </header>
+
+    <div class="container" id="form-container">
+        <h2>📋 KEAM Option Registration Help By Nexia Virtual Desk</h2>
+        
+        <!-- Basic Details -->
+        <div class="form-group glowing-element" style="padding:15px; border-radius:8px; border:1px solid #333;">
+            <h3>📝 Basic Details</h3>
+            <label for="appName">Applicant Name</label>
+            <input type="text" id="appName" placeholder="Enter full name" required>
+            <br><br>
+            <label for="appPhone">Phone Number</label>
+            <input type="tel" id="appPhone" placeholder="Enter mobile number" required>
+            <br><br>
+            <label for="appEmail">Email Address</label>
+            <input type="email" id="appEmail" placeholder="Enter email" required>
+            <br><br>
+            <label for="cee-reg">CEE Register Number</label>
+            <input type="text" id="cee-reg" placeholder="Enter CEE Register Number" required>
+            <br><br>
+            <label for="cee-pass">Password</label>
+            <input type="password" id="cee-pass" placeholder="Enter Password" required>
+        </div>
+
+        <h3 style="margin-top: 30px;">🎓 Select Streams to Apply</h3>
+        <p style="font-size:0.9em; color:#bbb;">* You can apply for multiple streams. Expand to search and prioritize your choices.</p>
+        
+        <!-- Stream 1: Engineering -->
+        <div class="stream-option glowing-element">
+            <label><input type="checkbox" id="chk-engg" onchange="toggleSection('engg')"> 1. Engineering Stream (B.Tech)</label>
+            <div class="stream-desc">
+                <strong>Requirements:</strong> KEAM Entrance Exam Score + 12th-grade PCM marks.<br>
+                <strong>Covers:</strong> Computer Science, Mechanical, Civil, ECE, etc.
+            </div>
+            <div id="engg-college-section" class="nested-college-section">
+                <h4 style="color:var(--glow-color); margin-top:0;">Engineering Colleges</h4>
+                <input type="text" class="search-box" id="enggSearch" placeholder="Search Engineering Colleges..." onkeyup="filterColleges('engg')">
+                <div class="college-list" id="enggList"></div>
+                <h4 style="color:#fff; margin-top:20px;">Your Priority Choices</h4>
+                <ul class="selected-list" id="enggSelectedList"></ul>
+            </div>
+        </div>
+
+        <!-- Stream 2: Medical & AYUSH -->
+        <div class="stream-option glowing-element">
+            <label><input type="checkbox" id="chk-med" onchange="toggleSection('med')"> 2. Medical & AYUSH Stream</label>
+            <div class="stream-desc">
+                <strong>Requirements:</strong> Dependent on your national NEET-UG qualification score.<br>
+                <strong>Covers:</strong> MBBS, BDS, BAMS, BHMS, BSMS, BUMS.
+            </div>
+            <div id="med-college-section" class="nested-college-section">
+                <h4 style="color:var(--glow-color); margin-top:0;">Medical & AYUSH Colleges</h4>
+                <input type="text" class="search-box" id="medSearch" placeholder="Search Medical Colleges..." onkeyup="filterColleges('med')">
+                <div class="college-list" id="medList"></div>
+                <h4 style="color:#fff; margin-top:20px;">Your Priority Choices</h4>
+                <ul class="selected-list" id="medSelectedList"></ul>
+            </div>
+        </div>
+
+        <!-- Stream 3: Medical Allied -->
+        <div class="stream-option glowing-element">
+            <label><input type="checkbox" id="chk-allied" onchange="toggleSection('allied')"> 3. Medical Allied Stream</label>
+            <div class="stream-desc">
+                <strong>Requirements:</strong> Evaluated based strictly on your national NEET-UG score.<br>
+                <strong>Covers:</strong> BSc Hons. Agriculture, Forestry, Veterinary Science, Fisheries.
+            </div>
+            <div id="allied-college-section" class="nested-college-section">
+                <h4 style="color:var(--glow-color); margin-top:0;">Medical Allied Colleges</h4>
+                <input type="text" class="search-box" id="alliedSearch" placeholder="Search Allied Colleges..." onkeyup="filterColleges('allied')">
+                <div class="college-list" id="alliedList"></div>
+                <h4 style="color:#fff; margin-top:20px;">Your Priority Choices</h4>
+                <ul class="selected-list" id="alliedSelectedList"></ul>
+            </div>
+        </div>
+
+        <!-- Stream 4: Architecture -->
+        <div class="stream-option glowing-element">
+            <label><input type="checkbox" id="chk-arch" onchange="toggleSection('arch')"> 4. Architecture Stream (B.Arch)</label>
+            <div class="stream-desc">
+                <strong>Requirements:</strong> Requires a valid state rank compiled from a candidate’s NATA score.<br>
+                <strong>Covers:</strong> 5-year Bachelor of Architecture admissions.
+            </div>
+            <div id="arch-college-section" class="nested-college-section">
+                <h4 style="color:var(--glow-color); margin-top:0;">Architecture Colleges</h4>
+                <input type="text" class="search-box" id="archSearch" placeholder="Search Architecture Colleges..." onkeyup="filterColleges('arch')">
+                <div class="college-list" id="archList"></div>
+                <h4 style="color:#fff; margin-top:20px;">Your Priority Choices</h4>
+                <ul class="selected-list" id="archSelectedList"></ul>
+            </div>
+        </div>
+
+        <!-- Stream 5: Pharmacy -->
+        <div class="stream-option glowing-element">
+            <label><input type="checkbox" id="chk-pharm" onchange="toggleSection('pharm')"> 5. Pharmacy Stream (B.Pharm)</label>
+            <div class="stream-desc">
+                <strong>Requirements:</strong> Calculated solely using your score from Paper 1 (Physics & Chemistry) of KEAM.<br>
+                <strong>Covers:</strong> Direct 4-year Bachelor of Pharmacy courses.
+            </div>
+            <div id="pharm-college-section" class="nested-college-section">
+                <h4 style="color:var(--glow-color); margin-top:0;">Pharmacy Colleges</h4>
+                <input type="text" class="search-box" id="pharmSearch" placeholder="Search Pharmacy Colleges..." onkeyup="filterColleges('pharm')">
+                <div class="college-list" id="pharmList"></div>
+                <h4 style="color:#fff; margin-top:20px;">Your Priority Choices</h4>
+                <ul class="selected-list" id="pharmSelectedList"></ul>
+            </div>
+        </div>
+
+        <button class="btn btn-action" onclick="showPreview()">Next Step: Preview Selections</button>
+        <button class="btn btn-reset" onclick="resetForm()">Reset Form</button>
+    </div>
+
+    <!-- Preview Container -->
+    <div class="container" id="preview-section">
+        <h2>Preview Your Selections</h2>
+        <div class="preview-box" id="preview-content">
+            <!-- Populated via JS -->
+        </div>
+        <button class="btn btn-whatsapp" onclick="sendToWhatsapp()">Send to Nexia via WhatsApp</button>
+        <button class="btn btn-edit" onclick="editData()">If you want to change your options click here</button>
+    </div>
+
+    <!-- Floating WhatsApp Help -->
+    <a href="https://wa.me/919961381033" target="_blank" class="float-wa">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c.003-3.625 2.952-6.575 6.577-6.575a6.59 6.59 0 0 1 4.653 1.927 6.586 6.586 0 0 1 1.927 4.654c-.004 3.628-2.953 6.578-6.58 6.578z"/>
+            <path d="M11.87 9.031c-.217-.109-1.285-.634-1.484-.707-.2-.072-.345-.109-.49.109-.145.217-.562.707-.688.852-.126.145-.253.163-.47.054-.217-.109-.917-.338-1.748-1.077-.643-.574-1.077-1.282-1.203-1.498-.126-.217-.013-.335.096-.444.097-.097.217-.253.326-.38.109-.126.145-.217.217-.362.072-.145.036-.271-.018-.38-.054-.109-.49-1.18-.671-1.615-.177-.424-.357-.367-.49-.374-.126-.007-.271-.007-.417-.007-.145 0-.38.054-.579.271-.199.217-.76 7.425-.76 1.808s.778 2.82 1.158 3.326c.38.506 2.27 3.465 5.501 4.825 2.502 1.05 3.018 1.05 3.56 1.013.542-.036 1.748-.707 1.993-1.391.244-.684.244-1.267.172-1.391-.072-.126-.263-.199-.48-.308z"/>
+        </svg>
+        <span class="wa-tooltip">Contact Help</span>
+    </a>
+
+    <script>
+        // Massive Database of KEAM 2026 Colleges with locations
+        const streamData = {
+            engg: [
+                {code:"IDK", name:"Govt. Engineering College, Painavu, Idukki", type:"Govt"},
+                {code:"KKE", name:"Govt. Engineering College, Kozhikode", type:"Govt"},
+                {code:"KNR", name:"Govt. College of Engineering, Kannur", type:"Govt"},
+                {code:"KTE", name:"Rajiv Gandhi Institute of Technology, Pampady, Kottayam", type:"Govt"},
+                {code:"PKD", name:"Govt. Engineering College, Sreekrishnapuram, Palakkad", type:"Govt"},
+                {code:"TCR", name:"Govt. Engineering College, Thrissur", type:"Govt"},
+                {code:"TRV", name:"Govt. Engineering College, Barton Hill, Thiruvananthapuram", type:"Govt"},
+                {code:"TVE", name:"College of Engineering, Thiruvananthapuram", type:"Govt"},
+                {code:"WYD", name:"Govt. Engineering College, Mananthavady, Wayanad", type:"Govt"},
+                {code:"MAC", name:"Mar Athanasius College of Engineering, Kothamangalam, Ernakulam", type:"Aided"},
+                {code:"NSS", name:"N.S.S. College of Engineering, Akathethara P O, Palakkad", type:"Aided"},
+                {code:"TKM", name:"T.K.M. College of Engineering, Kollam", type:"Aided Autonomous"},
+                {code:"ADR", name:"College of Engineering, Adoor, Pathanamthitta", type:"Govt Cost-Sharing"},
+                {code:"CEA", name:"College of Engineering, Attingal, Thiruvananthapuram", type:"Govt Cost-Sharing"},
+                {code:"CEC", name:"College of Engineering, Pallippuram, Cherthala, Alappuzha", type:"Govt Cost-Sharing"},
+                {code:"CEK", name:"College of Engineering, Kottarakkara, Kollam", type:"Govt Cost-Sharing"},
+                {code:"CHN", name:"College of Engineering, Chengannur, Alappuzha", type:"Govt Cost-Sharing"},
+                {code:"KNP", name:"College of Engineering, Karunagappally, Kollam", type:"Govt Cost-Sharing"},
+                {code:"MDL", name:"Model Engineering College, Thrikkakara, Ernakulam", type:"Govt Cost-Sharing"},
+                {code:"PJR", name:"College of Engineering, Poonjar, Kottayam", type:"Govt Cost-Sharing"},
+                {code:"PTA", name:"College of Engineering, Kallooppara, Pathanamthitta", type:"Govt Cost-Sharing"},
+                {code:"KSD", name:"LBS College of Engineering, Muliyar P O, Kasaragod", type:"Govt Cost-Sharing"},
+                {code:"LBT", name:"LBS Institute of Technology for Women, Poojappura, Thiruvananthapuram", type:"Govt Cost-Sharing"},
+                {code:"AEC", name:"College of Engineering, Aranmula, Pathanamthitta", type:"Govt Cost-Sharing"},
+                {code:"CEM", name:"College of Engineering, Muttathara, Thiruvananthapuram", type:"Govt Cost-Sharing"},
+                {code:"KGR", name:"College of Engineering, Kidangoor, Kottayam", type:"Govt Cost-Sharing"},
+                {code:"PEC", name:"College of Engineering, Pathanapuram, Kollam", type:"Govt Cost-Sharing"},
+                {code:"PRN", name:"College of Engineering, Perumon, Kollam", type:"Govt Cost-Sharing"},
+                {code:"PRP", name:"College of Engineering & Management, Punnapra, Alappuzha", type:"Govt Cost-Sharing"},
+                {code:"TKR", name:"College of Engineering, Trikaripur, Kasaragod", type:"Govt Cost-Sharing"},
+                {code:"TLY", name:"College of Engineering, Thalassery, Kannur", type:"Govt Cost-Sharing"},
+                {code:"VDA", name:"College of Engineering, Vadakara, Kozhikode", type:"Govt Cost-Sharing"},
+                {code:"SCT", name:"Sree Chitra Thirunal College of Engineering, Pappanamcode, Thiruvananthapuram", type:"Govt Cost-Sharing"},
+                {code:"UCE", name:"University College of Engineering, Thodupuzha, Idukki", type:"Govt Cost-Sharing"},
+                {code:"UCK", name:"University College of Engineering, Kariavattom, Thiruvananthapuram", type:"Govt Cost-Sharing"},
+                {code:"UCC", name:"Calicut University Institute of Engineering & Technology, Tenhipalam, Malappuram", type:"Govt Cost-Sharing"},
+                {code:"MNR", name:"College of Engineering, Munnar, Idukki", type:"Govt Cost-Sharing"},
+                {code:"AAE", name:"Al-Azhar College of Engineering & Tech, Thodupuzha, Idukki", type:"Private"},
+                {code:"AAP", name:"Al-Ameen Engineering College, Shoranur, Palakkad", type:"Private"},
+                {code:"AIK", name:"Albertian Institute of Science and Technology, Kalamassery, Ernakulam", type:"Private"},
+                {code:"AME", name:"Rajadhani Institute of Science & Technology, Mankara, Palakkad", type:"Private"},
+                {code:"ASI", name:"Adi Shankara Institute of Engineering & Technology, Kalady, Ernakulam", type:"Private"},
+                {code:"ATP", name:"Ahalia School of Engineering & Technology, Pudussery, Palakkad", type:"Private"},
+                {code:"AWH", name:"AWH Engineering College, Kuttikkattoor, Kozhikode", type:"Private"},
+                {code:"BJK", name:"Bishop Jerome Institute, Kollam", type:"Private"},
+                {code:"BMC", name:"Baselios Mathews II College of Engineering, Sasthamcotta, Kollam", type:"Private"},
+                {code:"CCV", name:"MGM College of Engineering & Pharmaceutical Science, Valanchery, Malappuram", type:"Private"},
+                {code:"CEN", name:"College of Engineering & Technology, Payyannur, Kannur", type:"Private"},
+                {code:"CIM", name:"Mentor Academy for Design Entrepreneurship innovation and Technology, Ettapilly, Ernakulam", type:"Private"},
+                {code:"CKC", name:"Christ Knowledge City, Kuzhoor, Ernakulam", type:"Private"},
+                {code:"CMA", name:"Carmel College of Engineering & Technology, Punnapra, Alappuzha", type:"Private"},
+                {code:"DMC", name:"M Dasan Institute of Technology, Ulliyeri, Kozhikode", type:"Private"},
+                {code:"ECE", name:"ICCS College of Engineering & Management, Muppliyam, Thrissur", type:"Private"},
+                {code:"EKC", name:"Eranad Knowledge City, Technical Campus, Manjeri, Malappuram", type:"Private"},
+                {code:"GIK", name:"Gregorian Institute of Technology, Kanjirampara, Kottayam", type:"Private"},
+                {code:"HGW", name:"Holy Grace Academy of Engineering, Mala, Thrissur", type:"Private"},
+                {code:"ICE", name:"Ilahia College of Engineering & Technology, Muvattupuzha, Ernakulam", type:"Private"},
+                {code:"IES", name:"IES College of Engineering, Chittilappilly, Thrissur", type:"Private"},
+                {code:"IGW", name:"Indira Gandhi Institute of Engineering & Technology for Women, Kothamangalam, Ernakulam", type:"Private"},
+                {code:"JBT", name:"Jai Bharath College of Management & Engineering Technology, Perumbavoor, Ernakulam", type:"Private"},
+                {code:"JIT", name:"John Cox Memorial CSI Institute of Technology, Kannammoola, Thiruvananthapuram", type:"Private"},
+                {code:"KIT", name:"Kottayam Institute of Technology & Science, Pallicathode, Kottayam", type:"Private"},
+                {code:"KMC", name:"KMCT College of Engineering, Kallanthode, Kozhikode", type:"Private"},
+                {code:"KMI", name:"KMCT Institute of Technology & Management, Kuttipuram, Malappuram", type:"Private"},
+                {code:"KMT", name:"KMCT College of Engineering for Emerging Technology, Mukkam, Kozhikode", type:"Private"},
+                {code:"KMV", name:"KMCT College of Technology and Management, Vadakara, Kozhikkode", type:"Private"},
+                {code:"KMW", name:"KMCT College of Engineering for Women, Mukkam, Kozhikode", type:"Private"},
+                {code:"KMY", name:"KMCT Institute of Engineering and Management, Angadippuram, Malappuram", type:"Private"},
+                {code:"KMZ", name:"KMCT College of Engineering and Management, Kasargode", type:"Private"},
+                {code:"KVE", name:"KVM College of Engineering & Information Technology, Cherthala, Alappuzha", type:"Private"},
+                {code:"LMC", name:"Lourdes Matha College of Science & Technology, Kuttichal, Thiruvananthapuram", type:"Private"},
+                {code:"MBC", name:"Mar Baselios Christian College of Engineering & Technology, Peermade, Idukki", type:"Private"},
+                {code:"MBI", name:"Mar Baselios Institute of Technology & Science, Nellimattom, Ernakulam", type:"Private"},
+                {code:"MCC", name:"Musaliar College of Engineering, Chirayinkeezhu, Thiruvananthapuram", type:"Private"},
+                {code:"MCE", name:"Marian Engineering College, Menamkulam, Thiruvananthapuram", type:"Private"},
+                {code:"MCK", name:"Musaliar College of Engineering & Technology, Kumbazha, Pathanamthitta", type:"Private"},
+                {code:"MCT", name:"Mohandas College of Engineering & Technology, Nedumangad, Thiruvananthapuram", type:"Private"},
+                {code:"MEA", name:"MEA Engineering College, Perinthalmanna, Malappuram", type:"Private"},
+                {code:"MEC", name:"Malabar College of Engineering & Tech, Wadakkancherry, Thrissur", type:"Private"},
+                {code:"MEE", name:"MES College of Engineering & Technology, Kunnukara, Ernakulam", type:"Private"},
+                {code:"MEK", name:"MES Institute of Technology & Management, Chathannoor, Kollam", type:"Private"},
+                {code:"MES", name:"MES College of Engineering, Kuttippuram, Malappuram", type:"Private"},
+                {code:"MET", name:"MET's School of Engineering, Mala, Thrissur", type:"Private"},
+                {code:"MGC", name:"M.G.College of Engineering, Thiruvallam, Thiruvananthapuram", type:"Private"},
+                {code:"MGE", name:"MGM College of Engineering and Technology, Pampakuda, Ernakulam", type:"Private"},
+                {code:"MHP", name:"ACE College of Engineering, Thiruvallam, Thiruvananthapuram", type:"Private"},
+                {code:"MLM", name:"Mangalam College of Engineering, Ettumanoor, Kottayam", type:"Private"},
+                {code:"MLT", name:"Malabar Institute of Technology, Anjarakandy, Kannur", type:"Private"},
+                {code:"MUS", name:"Muslim Association College of Engineering, Venjaramoodu, Thiruvananthapuram", type:"Private"},
+                {code:"MZC", name:"Mount Zion College of Engineering, Kadammanitta, Pathanamthitta", type:"Private"},
+                {code:"NIE", name:"Nirmala College of Engineering, Chalakkudy, Thrissur", type:"Private"},
+                {code:"PAA", name:"PA Aziz College of Engineering & Technology, Karakulam, Thiruvananthapuram", type:"Private"},
+                {code:"PRC", name:"Providence College of Engineering, Chengannur, Alappuzha", type:"Private"},
+                {code:"RCE", name:"Royal College of Engineering & Technology, Akkikavu, Thrissur", type:"Private"},
+                {code:"SCM", name:"SCMS School of Engineering & Technology, Karukutty, Ernakulam", type:"Private"},
+                {code:"SIT", name:"Sarabhai Institute of Science & Technology, Vellanad, Trivandrum", type:"Private"},
+                {code:"SNC", name:"Sree Narayana Guru College of Engineering & Technology, Payyanur, Kannur", type:"Private"},
+                {code:"SNG", name:"Sree Narayana Gurukulam College of Engineering, Kolencherry, Ernakulam", type:"Private"},
+                {code:"SNM", name:"Sree Narayana Mangalam Institute of Management & Technology, Maliankara, Ernakulam", type:"Private"},
+                {code:"SNP", name:"Sree Narayana Institute of Technology, Adoor, Pathanamthitta", type:"Private"},
+                {code:"SPT", name:"Sreepathy Institute of Management & Tech, Koottanad, Palakkad", type:"Private"},
+                {code:"STI", name:"St. Thomas Institute of Science & Tech, Kazhakkoottam, Thiruvananthapuram", type:"Private"},
+                {code:"STM", name:"St. Thomas College of Engineering & Technology, Mattanur, Kannur", type:"Private"},
+                {code:"TCE", name:"Toms College of Engineering for Startups, Mattakara, Kottayam", type:"Private"},
+                {code:"TCT", name:"Trinity College of Engineering, Naruvamoodu, Thiruvananthapuram", type:"Private"},
+                {code:"TEC", name:"Travancore Engineering college, Oyoor, Kollam", type:"Private"},
+                {code:"TJE", name:"Thejus Engineering College, Erumapetti, Thrissur", type:"Private"},
+                {code:"TKI", name:"T K M Institute of Technology, Ezhukone, Kollam", type:"Private"},
+                {code:"TOC", name:"Toc H Institute of Science & Technology, Arakkunnam, Ernakulam", type:"Private"},
+                {code:"UNT", name:"Universal Engineering College, Vallivattom, Thrissur", type:"Private"},
+                {code:"VAK", name:"Vidya Academy of Science & Technology, Kilimanoor, Thiruvananthapuram", type:"Private"},
+                {code:"VAS", name:"Vidya Academy of Science & Technology, Thalakkottukara, Thrissur", type:"Private"},
+                {code:"VIT", name:"Vijnan Institute of Science & Technology, Piravom, Ernakulam", type:"Private"},
+                {code:"VKE", name:"ValiaKoonambaikulathamma College of Engg.& Tech, Parippally, Thiruvananthapuram", type:"Private"},
+                {code:"VPE", name:"Mahaguru Institute of Technology, Mavelikkara, Alappuzha", type:"Private"},
+                {code:"VVT", name:"Veda Vyasa Institute of Technology, Ponnempadam, Malappuram", type:"Private"},
+                {code:"YCE", name:"Younus College of Engineering & Technology, Vadakkevila, Kollam", type:"Private"},
+                {code:"AJC", name:"Amal Jyothi College of Engineering, Kanjirapally, Kottayam", type:"Aided Autonomous"},
+                {code:"CCE", name:"Christ College of Engineering, Irinjalakuda, Thrissur", type:"Aided Autonomous"},
+                {code:"FIT", name:"Federal Institute of Science & Technology, Angamaly, Ernakulam", type:"Aided Autonomous"},
+                {code:"JCE", name:"Jawaharlal College of Engineering & Technology, Lakkidi, Palakkad", type:"Aided Autonomous"},
+                {code:"JEC", name:"Jyothi Engineering College, Cheruthuruthy, Thrissur", type:"Aided Autonomous"},
+                {code:"KME", name:"KMEA Engineering College, Edathala, Ernakulam", type:"Aided Autonomous"},
+                {code:"MBT", name:"Mar Baselious College of Engineering & Technology, Thiruvananthapuram", type:"Aided Autonomous"},
+                {code:"MGP", name:"Saintgits College of Engineering, Pathamuttom, Kottayam", type:"Aided Autonomous"},
+                {code:"MUT", name:"Muthoot Institute of Technology & Science, Puthencruez, Ernakulam", type:"Aided Autonomous"},
+                {code:"NCE", name:"Nehru College of Engineering & Research Centre, Thiruvilwamala, Thrissur", type:"Aided Autonomous"},
+                {code:"RET", name:"Rajagiri School of Engineering and Technology, Kakkanad, Ernakulam", type:"Aided Autonomous"},
+                {code:"RIE", name:"Rajadhani Institute of Engineering & Tech, Attingal, Thiruvananthapuram", type:"Aided Autonomous"},
+                {code:"SBC", name:"Sree Buddha College of Engineering, Pattoor, Alappuzha", type:"Aided Autonomous"},
+                {code:"SHR", name:"Sahrdaya College of Engineering & Technology, Kodakara, Thrissur", type:"Aided Autonomous"},
+                {code:"SJC", name:"St.Josephs College of Engineering & Technology, Palai, Kottayam", type:"Aided Autonomous"},
+                {code:"STC", name:"St. Thomas College of Engineering & Tech, Chengannur, Alappuzha", type:"Aided Autonomous"},
+                {code:"UKP", name:"UKF College of Engineering & Technology, Parippally, Kollam", type:"Aided Autonomous"},
+                {code:"VJC", name:"Viswajyothi College of Engineering & Technology, Vazhakulam, Ernakulam", type:"Aided Autonomous"},
+                {code:"VML", name:"Vimal Jyothi Engineering College, Chemperi, Kannur", type:"Aided Autonomous"}
+            ],
+            med: [
+                {code:"ALP", name:"Govt. T D Medical College, Alappuzha", type:"Govt"},
+                {code:"CMC", name:"Govt. Medical College, Ernakulam", type:"Govt"},
+                {code:"KKM", name:"Govt. Medical College, Kozhikode", type:"Govt"},
+                {code:"KLM", name:"Govt. Medical College, Parippally, Kollam", type:"Govt"},
+                {code:"KNM", name:"Govt. Medical College, Pariyaram, Kannur", type:"Govt"},
+                {code:"KTM", name:"Govt. Medical College, Kottayam", type:"Govt"},
+                {code:"MLP", name:"Govt. Medical College, Manjeri, Malappuram", type:"Govt"},
+                {code:"PKM", name:"Govt. Medical College, Palakkad", type:"Govt"},
+                {code:"TCM", name:"Govt. Medical College, Thrissur", type:"Govt"},
+                {code:"TVM", name:"Govt. Medical College, Thiruvananthapuram", type:"Govt"},
+                {code:"IDM", name:"Govt. Medical College, Idukki", type:"Govt"},
+                {code:"PTM", name:"Govt. Medical College, Konni, Pathanamthitta", type:"Govt"},
+                {code:"KSM", name:"Govt. Medical College, Kasaragod", type:"Govt"},
+                {code:"WYM", name:"Govt. Medical College, Wayanad", type:"Govt"},
+                {code:"ALD", name:"Govt. Dental College, Alappuzha", type:"Govt"},
+                {code:"KKD", name:"Govt. Dental College, Kozhikode", type:"Govt"},
+                {code:"KND", name:"Govt. Dental College, Pariyaram, Kannur", type:"Govt"},
+                {code:"KTD", name:"Govt. Dental College, Kottayam", type:"Govt"},
+                {code:"TCD", name:"Govt. Dental College, Thrissur", type:"Govt"},
+                {code:"TVD", name:"Govt. Dental College, Thiruvananthapuram", type:"Govt"},
+                {code:"KNA", name:"Government Ayurveda College, Pariyaram, Kannur", type:"Govt"},
+                {code:"TPA", name:"Government Ayurveda College, Tripunithura, Ernakulam", type:"Govt"},
+                {code:"TVA", name:"Government Ayurveda College, Thiruvananthapuram", type:"Govt"},
+                {code:"KKH", name:"Government Homoeopathic Medical College, Kozhikode", type:"Govt"},
+                {code:"TVH", name:"Government Homoeopathic Medical College, Thiruvananthapuram", type:"Govt"},
+                {code:"AAM", name:"Al-Azar Medical College, Thodupuzha, Idukki", type:"Private"},
+                {code:"AMC", name:"Amala Institute of Medical Sciences, Thrissur", type:"Private"},
+                {code:"AZC", name:"Azeezia Institute of Medical Science, Kollam", type:"Private"},
+                {code:"BCM", name:"Believers Church Medical College, Thiruvalla", type:"Private"},
+                {code:"DMM", name:"Dr Moopens Medical College, Wayanad", type:"Private"},
+                {code:"EMC", name:"MES Medical College, Perinthalmanna, Malappuram", type:"Private"},
+                {code:"GMC", name:"Sree Gokulam Medical College, Thiruvananthapuram", type:"Private"},
+                {code:"JMC", name:"Jubilee Mission Medical College, Thrissur", type:"Private"},
+                {code:"KCM", name:"KMCT Medical College, Mukkom, Kozhikode", type:"Private"},
+                {code:"KDM", name:"PK Das Institute of Medical Sciences, Palakkad", type:"Private"},
+                {code:"KMM", name:"Karuna Medical College, Chittur, Palakkad", type:"Private"},
+                {code:"MMC", name:"Malankara Orthodox Syrian Church Medical College, Kolenchery, Ernakulam", type:"Private"},
+                {code:"MMH", name:"Malabar Medical College Hospital, Kozhikode", type:"Private"},
+                {code:"MZM", name:"Mount Zion Medical College, Adoor, Pathanamthitta", type:"Private"},
+                {code:"PMC", name:"Pushpagiri Institute of Medical Science, Thiruvalla", type:"Private"},
+                {code:"SIM", name:"Sree Narayana Institute of Medical Sciences, Ernakulam", type:"Private"},
+                {code:"SMC", name:"Dr. Somervell Memorial CSI Medical College, Karakonam, Thiruvananthapuram", type:"Private"},
+                {code:"SUC", name:"SUT Academy of Medical Sciences, Thiruvananthapuram", type:"Private"},
+                {code:"TRM", name:"Travancore Medical College, Kollam", type:"Private"},
+                {code:"PIM", name:"Palakkad Institute of Medical Sciences, Palakkad", type:"Private"},
+                {code:"KEM", name:"Kerala Medical College, Mangode, Palakkad", type:"Private"},
+                {code:"KTL", name:"VPSV Ayurveda College, Kottakkal, Malappuram", type:"Aided"},
+                {code:"OLR", name:"Vaidyaretnam Ayurveda College, Ollur, Thrissur", type:"Aided"},
+                {code:"EKH", name:"Dr. Padiyar Memorial Homoeopathic Medical College, Chottanikkara, Ernakulam", type:"Aided"},
+                {code:"KTH", name:"Athurasramam NSS Homoeopathic Medical College, Kottayam", type:"Aided"},
+                {code:"NEH", name:"Sree Vidhyadhiraja Homoeopathic Medical College, Nemom, Thiruvananthapuram", type:"Aided"},
+                {code:"SGS", name:"Santhigiri Siddha Medical College, Pothencode, Thiruvananthapuram", type:"Private"},
+                {code:"MRU", name:"Markaz Unani Medical College, Puthupadi, Kozhikode", type:"Private"}
+            ],
+            allied: [
+                {code:"COA", name:"College of Agriculture, Vellayani, Thiruvananthapuram", type:"Govt"},
+                {code:"COH", name:"College of Horticulture, Vellanikkara, Thrissur", type:"Govt"},
+                {code:"CON", name:"College of Agriculture, Padannakkad, Kasaragod", type:"Govt"},
+                {code:"COW", name:"College of Agriculture, Ambalavayal, Wayand", type:"Govt"},
+                {code:"COR", name:"College of Forestry, Vellanikkara, Thrissur", type:"Govt"},
+                {code:"COB", name:"College of Co-operation, Banking and Management, Vellanikkara, Thrissur", type:"Govt"},
+                {code:"COS", name:"College of Climate Change and Environmental Science, Vellanikkara, Thrissur", type:"Govt"},
+                {code:"TCV", name:"College of Veterinary and Animal Sciences, Mannuthy, Thrissur", type:"Govt"},
+                {code:"WYV", name:"College of Veterinary and Animal Sciences, Pookot, Wayanad", type:"Govt"},
+                {code:"COF", name:"Faculty of Fisheries Science, KUFOS, Panangad, Ernakulam", type:"Govt"},
+                {code:"COO", name:"The College of Fisheries Payyannur, Kannur", type:"Govt"}
+            ],
+            arch: [
+                {code:"TVE", name:"College of Engineering, Thiruvananthapuram", type:"Govt"},
+                {code:"KTE", name:"Rajiv Gandhi Institute of Technology, Pampady, Kottayam", type:"Govt"},
+                {code:"TCR", name:"Govt. Engineering College, Thrissur", type:"Govt"},
+                {code:"ALR", name:"ABATE Institute of Architecture, Perinthalmanna, Malappuram", type:"Private"},
+                {code:"APR", name:"SEED-APJ Abdul Kalam School of Environmental Design, Ernakulam", type:"Private"},
+                {code:"ASR", name:"Asian School of Architecture and Design Innovations, Vyttila, Kochi", type:"Private"},
+                {code:"AVR", name:"Avani Institute of Design, Puthiyara, Kozhikode", type:"Private"},
+                {code:"BJR", name:"Bishop Jerome Institute, Kollam", type:"Private"},
+                {code:"DCR", name:"DC School of Architecture and Design, Vagamon, Idukki", type:"Private"},
+                {code:"DGR", name:"Devaki Amma's Guruvayurappan College of Architecture, Malappuram", type:"Private"},
+                {code:"DSR", name:"DC School of Architecutre and Design, Kazhakoottam, Thiruvananthapuram", type:"Private"},
+                {code:"EKR", name:"Eranad Knowledge City College of Architecture, Manjeri, Malappuram", type:"Private"},
+                {code:"IER", name:"IES College of Architecture, Chittilappilli, Thrissur", type:"Private"},
+                {code:"KMR", name:"KMEA College of Architecture, Edathala, Ernakulam", type:"Private"},
+                {code:"KTR", name:"KMCT College of Architecture, Kalanthode, Kozhikkode", type:"Private"},
+                {code:"MCR", name:"Marian College of Architecture & Planning, Kazhakuttom, Thiruvananthapuram", type:"Private"},
+                {code:"MER", name:"MES College of Architecture, Kakkodi, Kozhikkode", type:"Private"},
+                {code:"MLR", name:"Mangalam School of Architecture, Perumbaikad, Kottayam", type:"Private"},
+                {code:"MRR", name:"MES School of Architecture, Kuttippuram, Malappuram", type:"Private"},
+                {code:"MTR", name:"KMCT College of Architecture, Manassery, Kozhikkode", type:"Private"},
+                {code:"NCR", name:"Nehru College of Architecture, Lakkidi, Palakkad", type:"Private"},
+                {code:"NVR", name:"College of Architecture, Vellanad, Thiruvananthapuram", type:"Private"},
+                {code:"SCR", name:"SCMS School of Architecture, Karukutty, Ernakulam", type:"Private"},
+                {code:"TER", name:"TKM School of Architecture, Ezhukone, Kollam", type:"Private"},
+                {code:"TJR", name:"Thejus College of Architecture, Erumappetty, Thrissur", type:"Private"}
+            ],
+            pharm: [
+                {code:"ALB", name:"College of Pharmaceutical Sciences, Govt. Medical College, Alappuzha", type:"Govt"},
+                {code:"KKB", name:"College of Pharmaceutical Sciences, Govt. Medical College, Kozhikode", type:"Govt"},
+                {code:"KTB", name:"College of Pharmaceutical Sciences, Govt. Medical College, Kottayam", type:"Govt"},
+                {code:"TVB", name:"College of Pharmaceutical Sciences, Govt. Medical College, Thiruvananthapuram", type:"Govt"},
+                {code:"AMB", name:"College of Pharmaceutical Sciences, Govt. Medical College, Kannur", type:"Govt"},
+                {code:"DPB", name:"Centre for Professional Studies, Cheruvandoor, Ettumanoor, Kottayam", type:"Govt Cost-Sharing"},
+                {code:"RIB", name:"Department of Pharmaceutical Science, Puthuppally, Kottayam", type:"Govt Cost-Sharing"},
+                {code:"AAB", name:"Al-Azhar College of Pharmacy, Thodupuzha, Idukki", type:"Private"},
+                {code:"AFB", name:"Al Shifa College of Pharmacy, Perinthalmanna, Malappuram", type:"Private"},
+                {code:"AHB", name:"Ahalia School of Pharmacy, Kozhipara, Palakkad", type:"Private"},
+                {code:"CAB", name:"Caritas College of Pharmacy, Thellakom, Kottayam", type:"Private"},
+                {code:"CCB", name:"Chemists College of Pharmaceutical Science & Research, Puthencruz, Ernakulam", type:"Private"},
+                {code:"CHB", name:"MGM College of Pharmaceutical Sciences, Malappuram", type:"Private"},
+                {code:"CRB", name:"Crescent College of Pharmaceutical Sciences, Pazhayangadi, Kannur", type:"Private"},
+                {code:"DAB", name:"Devaki Amma Memorial College of Pharmacy, Chelembra, Malappuram", type:"Private"},
+                {code:"DMB", name:"Dr. Moopen’s College of Pharmacy, Wayanad", type:"Private"},
+                {code:"DVB", name:"The DaleView College of Pharmacy & Research Centre, Punalal, Thiruvananthapuram", type:"Private"},
+                {code:"ECB", name:"Ezhuthachan College of Pharmaceutical Science, Neyyattinkara, Thiruvananthapuram", type:"Private"},
+                {code:"EPB", name:"Elims College of Pharmacy, Ramavarmapuram, Thrissur", type:"Private"},
+                {code:"GCB", name:"Grace College of Pharmacy, Kodunthirapully, Palakkad", type:"Private"},
+                {code:"HGB", name:"Holy Grace Academy of Pharmacy, Mala, Thrissur", type:"Private"},
+                {code:"HKB", name:"Hindhusthan College of Pharmacy, Kanjirappally", type:"Private"},
+                {code:"HQB", name:"Holy Queen College of Pharmaceutical Sciences, Thrissur", type:"Private"},
+                {code:"JCB", name:"St.James College of Pharmaceutical Sciences, Chalakudy, Thrissur", type:"Private"},
+                {code:"JDB", name:"JDT Islam College of Pharmacy, Marikunnu, Kozhikode", type:"Private"},
+                {code:"JSB", name:"Jamia Salafiya Pharmacy College, Pulikkal, Malappuram", type:"Private"},
+                {code:"KCB", name:"KMCT College of Pharmacy, Mampara, Malapuram", type:"Private"},
+                {code:"KEB", name:"Indira Gandhi Institute of Pharmaceutical Sciences, Ernakulam", type:"Private"},
+                {code:"KKP", name:"KMCT Institute of Pharmaceutical Education, Chathamangalam, Kozhikkode", type:"Private"},
+                {code:"KLB", name:"KMCT Institute of Pharmacy, Kuttippuram, Malappuram", type:"Private"},
+                {code:"KMB", name:"KMCT College of Pharmaceutical Sciences, Kalanthode, Kozhikode", type:"Private"},
+                {code:"KNB", name:"College of Pharmacy, Kannur Medical College, Anjarakandy, Kannur", type:"Private"},
+                {code:"KPB", name:"K T N College of Pharmacy, Ottappalam, Palakkad", type:"Private"},
+                {code:"KRB", name:"Karuna College of Pharmacy, Pattambi, Palakkad", type:"Private"},
+                {code:"KVB", name:"K V M College of Pharmacy, Cherthala, Alappuzha", type:"Private"},
+                {code:"MAB", name:"Malabar College of Pharmacy, Edappal, Malappuram", type:"Private"},
+                {code:"MCB", name:"Moulana College of Pharmacy, Angadippuram, Malappuram", type:"Private"},
+                {code:"MDB", name:"Mar Dioscorus College of Pharmacy, Sreekaryam, Thiruvananthapuram", type:"Private"},
+                {code:"MEB", name:"METS College of Pharmacy, Mala, Thrissur", type:"Private"},
+                {code:"MGA", name:"MGM Academy of Pharmacy, Kollam", type:"Private"},
+                {code:"MGB", name:"MGM Silver Jubilee College of Pharmaceutical Sciences, Pampakuda, Ernakulam", type:"Private"},
+                {code:"MGK", name:"MGM Silver Jubilee College Pharmacy, Kilimanoor, Thiruvananthapuram", type:"Private"},
+                {code:"MGR", name:"MGM College of Pharmacy, Pilathara, Kannur", type:"Private"},
+                {code:"MKB", name:"Malik Deenar College of Pharmacy, Seethangoli, Kasaragod", type:"Private"},
+                {code:"MLB", name:"Madin College of Pharmacy, Malappuram", type:"Private"},
+                {code:"MMB", name:"Mookambika College of Pharmaceutical Sciences, Mannathoor, Ernakulam", type:"Private"},
+                {code:"MPB", name:"Dr. Joseph Mar Thoma Institute of Pharmaceutical Sciences, Kattanam, Alappuzha", type:"Private"},
+                {code:"MZB", name:"Mount Zion College of Pharmaceutical Science, Adoor, Pathanamthitta", type:"Private"},
+                {code:"NAB", name:"Nazareth College of Pharmacy, Othera, Thiruvalla", type:"Private"},
+                {code:"NCB", name:"Nehru College of Pharmacy, Pampady, Thrissur", type:"Private"},
+                {code:"NEB", name:"Nirmala College of Health Sciences, Meloor, Thrissur", type:"Private"},
+                {code:"NMB", name:"Nirmala College of Pharmacy, Muvattupuzha, Ernakulam", type:"Private"},
+                {code:"NPB", name:"National College of Pharmacy, Manassery, Kozhikode", type:"Private"},
+                {code:"PCB", name:"Pushpagiri College of Pharmacy, Perumthuruthy, Thiruvalla", type:"Private"},
+                {code:"PPB", name:"Prime College of Pharmacy, Erattayil, Palakkad", type:"Private"},
+                {code:"RGB", name:"Rajeev Gandhi Institute of Pharmaceutical Sciences, Trikaripur, Kasaragod", type:"Private"},
+                {code:"SCB", name:"St. Joseph’s College of Pharmacy, Cherthala, Alappuzha", type:"Private"},
+                {code:"SJB", name:"St. John's College of Pharmaceutical Sciences, Kattapana, Idukki", type:"Private"},
+                {code:"SKP", name:"Sreekrishna College of Pharmacy & Research Centre, Parassala, Thiruvananthapuram", type:"Private"},
+                {code:"SPB", name:"Sanjoe College of Pharmaceutical Studies, Kuzhalmannam, Palakkad", type:"Private"},
+                {code:"STB", name:"Sree Gokulam SNGM College of Pharmacy", type:"Private"},
+                {code:"TIB", name:"Triveni Institute of Pharmacy, Kecheri, Thrissur", type:"Private"},
+                {code:"WSB", name:"West fort College of Pharmacy, Thrissur", type:"Private"}
+            ]
+        };
+
+        const streamNames = {
+            engg: "1. Engineering Stream (B.Tech)",
+            med: "2. Medical & AYUSH Stream",
+            allied: "3. Medical Allied Stream",
+            arch: "4. Architecture Stream (B.Arch)",
+            pharm: "5. Pharmacy Stream (B.Pharm)"
+        };
+
+        let userChoices = { engg: [], med: [], allied: [], arch: [], pharm: [] };
+
+        function getBadgeClass(type) {
+            if(type === 'Govt') return 'badge govt';
+            if(type === 'Aided') return 'badge aided';
+            if(type === 'Aided Autonomous') return 'badge autonomous';
+            if(type === 'Govt Cost-Sharing') return 'badge cost-sharing';
+            if(type === 'Private' || type === 'Self-Financing') return 'badge private';
+            return 'badge';
+        }
+
+        // Generic function to toggle section visibility
+        function toggleSection(streamKey) {
+            const chk = document.getElementById(`chk-${streamKey}`).checked;
+            const sec = document.getElementById(`${streamKey}-college-section`);
+            if(chk) {
+                sec.style.display = 'block';
+                renderColleges(streamKey);
+            } else {
+                sec.style.display = 'none';
+            }
+        }
+
+        // Generic function to render college lists
+        function renderColleges(streamKey, filter = '') {
+            const container = document.getElementById(`${streamKey}List`);
+            container.innerHTML = '';
+            
+            streamData[streamKey].forEach(c => {
+                if(c.name.toLowerCase().includes(filter.toLowerCase()) || c.code.toLowerCase().includes(filter.toLowerCase()) || c.type.toLowerCase().includes(filter.toLowerCase())) {
+                    const div = document.createElement('div');
+                    div.className = 'college-item';
+                    div.innerHTML = `
+                        <div>
+                            <strong>${c.code}</strong> - ${c.name} 
+                            <span class="${getBadgeClass(c.type)}">${c.type}</span>
+                        </div>
+                        <button class="btn btn-add" onclick="addChoice('${streamKey}', '${c.code}')">Add</button>
+                    `;
+                    container.appendChild(div);
+                }
+            });
+        }
+
+        function filterColleges(streamKey) {
+            renderColleges(streamKey, document.getElementById(`${streamKey}Search`).value);
+        }
+
+        function addChoice(streamKey, code) {
+            const college = streamData[streamKey].find(c => c.code === code);
+            if(!userChoices[streamKey].some(c => c.code === code)) {
+                userChoices[streamKey].push(college);
+                renderChoices(streamKey);
+            } else {
+                alert("Already added to your choices!");
+            }
+        }
+
+        function removeChoice(streamKey, code) {
+            userChoices[streamKey] = userChoices[streamKey].filter(c => c.code !== code);
+            renderChoices(streamKey);
+        }
+
+        // Generic function to render selected choices with Drag & Drop
+        function renderChoices(streamKey) {
+            const ul = document.getElementById(`${streamKey}SelectedList`);
+            ul.innerHTML = '';
+            
+            userChoices[streamKey].forEach((c, i) => {
+                const li = document.createElement('li');
+                li.className = 'selected-item glowing-element';
+                li.draggable = true;
+                li.dataset.index = i;
+                
+                li.innerHTML = `
+                    <div>
+                        <span style="color:var(--glow-color); font-weight:bold; margin-right:10px;">#${i + 1}</span>
+                        ${c.name} (${c.code}) - <span style="color:#aaa; font-size:0.85em;">${c.type}</span>
+                    </div>
+                    <button class="btn btn-remove" onclick="removeChoice('${streamKey}', '${c.code}')">Remove</button>
+                `;
+
+                li.addEventListener('dragstart', e => { e.dataTransfer.setData('text/plain', i); });
+                li.addEventListener('dragover', e => e.preventDefault());
+                li.addEventListener('drop', e => {
+                    e.preventDefault();
+                    const fromI = parseInt(e.dataTransfer.getData('text/plain'));
+                    const toI = i;
+                    const item = userChoices[streamKey].splice(fromI, 1)[0];
+                    userChoices[streamKey].splice(toI, 0, item);
+                    renderChoices(streamKey);
+                });
+                
+                ul.appendChild(li);
+            });
+        }
+
+        function showPreview() {
+            // Validate Details
+            const name = document.getElementById('appName').value;
+            const phone = document.getElementById('appPhone').value;
+            const email = document.getElementById('appEmail').value;
+            const reg = document.getElementById('cee-reg').value;
+            const pass = document.getElementById('cee-pass').value;
+
+            if(!name || !phone || !email || !reg || !pass) {
+                alert("Please fill all Basic Details strictly!");
+                return;
+            }
+
+            // Generate HTML Preview
+            let previewHTML = `
+                <p><span>Name:</span> ${name}</p>
+                <p><span>Phone:</span> ${phone}</p>
+                <p><span>Email:</span> ${email}</p>
+                <p><span>CEE Register No:</span> ${reg}</p>
+                <p><span>Password:</span> ${'*'.repeat(pass.length)}</p>
+                <hr style="border-color:#333; margin:15px 0;">
+            `;
+
+            let hasStream = false;
+            
+            Object.keys(streamNames).forEach(key => {
+                if(document.getElementById(`chk-${key}`).checked) {
+                    hasStream = true;
+                    previewHTML += `<p><span>${streamNames[key]} Choices:</span></p>`;
+                    if(userChoices[key].length > 0) {
+                        previewHTML += `<ol style="color:#ccc;">`;
+                        userChoices[key].forEach(c => {
+                            previewHTML += `<li>${c.code} - ${c.name} (${c.type})</li>`;
+                        });
+                        previewHTML += `</ol>`;
+                    } else {
+                        previewHTML += `<p style="color:#888; font-size:0.9em; margin-left:20px;">No specific colleges prioritized yet.</p>`;
+                    }
+                }
+            });
+
+            if(!hasStream) {
+                alert("Please select at least one stream to proceed.");
+                return;
+            }
+
+            document.getElementById('preview-content').innerHTML = previewHTML;
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('preview-section').style.display = 'block';
+        }
+
+        function editData() {
+            document.getElementById('preview-section').style.display = 'none';
+            document.getElementById('form-container').style.display = 'block';
+        }
+
+        function sendToWhatsapp() {
+            const name = document.getElementById('appName').value;
+            const phone = document.getElementById('appPhone').value;
+            const email = document.getElementById('appEmail').value;
+            const reg = document.getElementById('cee-reg').value;
+            const pass = document.getElementById('cee-pass').value;
+
+            let text = `*KEAM Option Registration - Nexia Virtual Desk*\n\n`;
+            text += `*Basic Details:*\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nCEE Reg No: ${reg}\nPassword: ${pass}\n\n`;
+            
+            Object.keys(streamNames).forEach(key => {
+                if(document.getElementById(`chk-${key}`).checked) {
+                    text += `*${streamNames[key]}:*\n`;
+                    if(userChoices[key].length > 0) {
+                        userChoices[key].forEach((c, i) => {
+                            text += `  ${i+1}. ${c.code} - ${c.name} (${c.type})\n`;
+                        });
+                    } else {
+                        text += `  (No specific colleges selected)\n`;
+                    }
+                    text += `\n`;
+                }
+            });
+
+            const encodedText = encodeURIComponent(text);
+            window.open(`https://wa.me/919961850698?text=${encodedText}`, '_blank');
+        }
+
+        function resetForm() {
+            if(confirm("Are you sure you want to reset the entire form?")) {
+                document.querySelectorAll('input[type="text"], input[type="password"], input[type="email"], input[type="tel"]').forEach(input => input.value = '');
+                
+                Object.keys(streamNames).forEach(key => {
+                    document.getElementById(`chk-${key}`).checked = false;
+                    toggleSection(key);
+                    userChoices[key] = [];
+                    renderChoices(key);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
